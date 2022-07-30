@@ -4,12 +4,20 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<div class="container-fluid bg-secondary text-light text-center p-5">
+    <div class="container bg-secondary bg-gradient p-5">
+        <h1 class="display-4">Students</h1>
+        <hr>
+        <div class="d-grid gap-2">
+            <a class="btn btn-outline-info bg-gradient" asp-action="Create">Create New</a>
+        </div>
+         <hr>
+    </div>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
+<div class="container-fluid bg-secondary text-light text-center p-5">
+    <div class="container bg-secondary bg-gradient p-5">
+        <table class="table">
     <thead>
         <tr>
             <th>
@@ -25,23 +33,27 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.LastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FirstMidName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.EnrollmentDate)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstMidName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.EnrollmentDate)
+                </td>
+                <td>
+                    <a class="btn btn-outline-secondary bg-gradient text-dark" asp-action="Edit" asp-route-id="@item.ID"><i class="bi bi-pencil-square"></i>&ensp;Edit</a>
+                    <a class="btn btn-outline-secondary bg-gradient text-dark" asp-action="Details" asp-route-id="@item.ID"><i class="bi bi-eye"></i>&ensp;Details</a>
+                    <a class="btn btn-outline-secondary bg-gradient text-dark" asp-action="Delete" asp-route-id="@item.ID"><i class="bi bi-trash"></i>&ensp;Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+    </div>
+</div>
