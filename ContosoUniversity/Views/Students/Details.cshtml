@@ -4,33 +4,58 @@
     ViewData["Title"] = "Details";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>Student</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.LastName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.LastName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FirstMidName)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FirstMidName)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.EnrollmentDate)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EnrollmentDate)
-        </dd>
-    </dl>
+<div class="container-fluid bg-secondary text-light text-center p-5">
+    <div class="container bg-secondary bg-gradient p-5">
+        <h1 class="display-1">Details</h1>
+        <hr>
+        <div class="d-grid gap-2">
+            <a class="btn btn-outline-info bg-gradient" asp-action="Index">Back to List</a>
+        </div>
+        <hr>
+    </div>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+
+<div class="container-fluid bg-secondary text-light text-center p-5">
+    <div class="container bg-secondary bg-gradient p-5">
+        <div>
+            <h1 class="display-4">Student</h1>
+            <hr />
+            <div class="row">
+                <div class="col-md-4"></div>
+                <div class="col-md-4">
+                    <table class="table text-start">
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.LastName)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.LastName)
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.FirstMidName)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.FirstMidName)
+                                </th>
+                            </tr>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.EnrollmentDate)
+                                </th>
+                                <th>
+                                    @Html.DisplayFor(model => model.EnrollmentDate)
+                                </th>
+                            </tr>
+                        </thead>
+                    </table>
+                    <div class="d-grid gap-2 pt-4">
+                        <a class="btn btn-outline-info bg-gradient" asp-action="Edit" asp-route-id="@Model?.ID"><i class="bi bi-pencil-square"></i>&ensp;Edit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
